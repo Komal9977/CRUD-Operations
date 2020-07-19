@@ -1,8 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
+let app = express();
+app.use(cors());
+app.options('*', cors());
 
 // create express app
-const app = express();
+// const app = express();
 
 // Setup server port
 const port = process.env.PORT || 5000;
@@ -15,7 +20,7 @@ app.use(bodyParser.json())
 
 // define a root route
 app.get('/', (req, res) => {
-  res.send("Hello World");
+ return res.send("Hello World");
 });
 
 // Require employee routes

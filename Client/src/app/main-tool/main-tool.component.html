@@ -1,17 +1,39 @@
+<div>
 <p>
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <mat-icon aria-hidden="true" aria-label="Example home icon">home</mat-icon>
-      <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>Theme</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>Filter</mat-icon>
-      </button> -->
+    <mat-toolbar color="primary" class="mat-elevation-z6">
+      <span><mat-icon>eco</mat-icon>CRUD app for Employees</span>
+      <div class="spacer"></div>
+      <a mat-button routerLink="home">Home</a>
+      <a mat-raised-button color="accent" routerLink="signup">Sign Up</a>
     </mat-toolbar>
   </p>
+
+  <div class="container">
+    <h2>Employees List</h2>
   
+    <head><meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+      </head>           
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let datatable of datatable2">
+          <td> {{datatable.id}} </td>
+          <td> {{datatable.first_name}} </td>
+          <td> {{datatable.last_name}} </td>
+          <td> {{datatable.email}} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
