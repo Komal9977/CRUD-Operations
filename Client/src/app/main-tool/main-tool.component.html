@@ -3,8 +3,8 @@
     <mat-toolbar color="primary" class="mat-elevation-z6">
       <span><mat-icon>eco</mat-icon>CRUD app for Employees</span>
       <div class="spacer"></div>
-      <a mat-button routerLink="home">Home</a>
-      <a mat-raised-button color="accent" routerLink="signup">Sign Up</a>
+      <a mat-raised-button color="primary" routerLink="/maintool">Home</a>
+      <a mat-raised-button color="accent" routerLink="/signup">Sign Up</a>
     </mat-toolbar>
   </p>
 
@@ -28,11 +28,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor = "let datatable of datatable2">
-          <td> {{datatable.id}} </td>
-          <td> {{datatable.first_name}} </td>
-          <td> {{datatable.last_name}} </td>
-          <td> {{datatable.email}} </td>
+        <tr *ngFor = "let user of users">
+          <td> {{user.id}} </td>
+          <td> {{user.first_name}} </td>
+          <td> {{user.last_name}} </td>
+          <td> {{user.email}} </td>
         </tr>
       </tbody>
     </table>

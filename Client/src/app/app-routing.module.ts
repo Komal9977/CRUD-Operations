@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
+import { MainToolComponent } from './main-tool/main-tool.component';
 
 const routes: Routes = [  
-  { path: 'home', component: SignupComponent},
-  // { path: 'Dark mode', component: SignupComponent},
-  // { path: 'Offline mode', component: SignupComponent},
-  { path: 'signup', component: SignupComponent}
+  { path: 'maintool', component: MainToolComponent},
+  { path: 'signup', component: SignupComponent},
+  { path: '**', redirectTo:"maintool"},
 ];
 
 @NgModule({

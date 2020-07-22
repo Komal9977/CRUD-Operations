@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 var dbConn = require('./../../config/db.config');
 
 //Emp object creation
@@ -33,6 +33,7 @@ Employee.findById = function (id, result) {
         }
     });   
 };
+//FINDALL
 Employee.findAll = function (result) {
     dbConn.query("Select * from employees", function (err, res) {
         if(err) {
