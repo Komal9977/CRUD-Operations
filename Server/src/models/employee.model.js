@@ -48,7 +48,7 @@ Employee.findAll = function (result) {
 };
 //UPDATE
 Employee.update = function(id, employee, result){
-  dbConn.query("UPDATE employees SET first_name=?,last_name=?,email=?,phone=?, WHERE id = ?", [employee.first_name,employee.last_name,employee.email, id], function (err, res) {
+  dbConn.query("UPDATE employees SET first_name=?,last_name=?,email=?, WHERE id = ?", [employee.first_name,employee.last_name,employee.email, id], function (err, res) {
         if(err) {
             console.log("error: ", err);
             result(null, err);

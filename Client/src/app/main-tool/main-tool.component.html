@@ -3,12 +3,19 @@
     <mat-toolbar color="primary" class="mat-elevation-z6">
       <span><mat-icon>eco</mat-icon>CRUD app for Employees</span>
       <div class="spacer"></div>
-      <a mat-raised-button color="primary" routerLink="/maintool">Home</a>
-      <a mat-raised-button color="accent" routerLink="/signup">Sign Up</a>
+      <a mat-flat-button  color="primary" routerLink="/maintool">Home</a> &nbsp;&nbsp;
+      <a mat-flat-button color="warn" routerLink="/signup" >Sign Up</a>
     </mat-toolbar>
   </p>
 
   <div class="container">
+    <div class="example-button-container">
+      <button mat-flat-button color="accent" aria-label="create" routerLink="/create">
+        <mat-icon>add</mat-icon>Create
+      </button>
+    </div>
+    
+
     <h2>Employees List</h2>
   
     <head><meta charset="utf-8">
@@ -18,13 +25,15 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
       </head>           
-    <table class="table table-bordered">
+    <table class="table">
       <thead>
         <tr>
           <th>ID</th>
           <th>First name</th>
           <th>Last name</th>
           <th>Email</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +42,21 @@
           <td> {{user.first_name}} </td>
           <td> {{user.last_name}} </td>
           <td> {{user.email}} </td>
+         <td> <div class="example-button-container">
+            <button mat-icon-button color="primary" aria-label="Update" matTooltip="Update" (click)="update(user.id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </div></td>
+          <td> <div class="example-button-container">
+            <button mat-mini-fab color="warn" aria-label="delete" matTooltip="Delete" (click)="delete(user.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div></td>
         </tr>
       </tbody>
     </table>
+    <mat-paginator [length]="100"
+              [pageSize]="5"
+              [pageSizeOptions]="[5, 10, 15, 20]">
+</mat-paginator>
   </div>
